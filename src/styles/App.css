@@ -86,13 +86,18 @@ textarea {
     resize: none;
 }
 
-#summary-delete-btn {
+#delete-summary-btn {
     padding: 10px 16px;
     border-radius: 12px;
     background-color: #ccc;
     border: none;
 }
 
-#summary-delete-btn:hover {
+#delete-summary-btn:hover {
     cursor: pointer;
+}
+
+.skills-nav {
+    display: flex;
+    gap: 24px;
 }
