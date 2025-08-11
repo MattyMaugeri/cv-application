@@ -1,6 +1,7 @@
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -27,30 +28,37 @@ body {
     padding: 8px 0;
 }
 
-.sidebar-card {
+.panels {
     width: 100%;
-    padding: 0 0 20px 0;
+    padding-bottom: 20px;
 }
 
-.sidebar-btns {
+.panels-btns {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 24px 28px;
+    padding: 24px 22px;
     border: none;
-    /* background-color: #f5f5f5; */
+    background-color: #f5f5f5;
 }
 
-.sidebar-btns:hover {
+.panels-btns:hover {
     cursor: pointer;
 }
 
-.sidebar-btns svg {
+.panels-btns svg {
     width: 32px;
 }
 
-.sidebar-form {
+.panels-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.panels-form {
     display: flex;
     flex-direction: column;
     border: 1px solid grey;
@@ -58,13 +66,33 @@ body {
     padding: 28px;
 }
 
-.sidebar-form input {
+.panels-form input {
     border: none;
     outline: none;
     border-radius: 12px;
     padding: 8px 12px;
 }
 
-.sidebar-form label {
+.panels-form label {
     margin: 8px 0 8px 8px;
+}
+
+textarea {
+    min-width: 80%;
+    min-height: 80px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: none;
+}
+
+#summary-delete-btn {
+    padding: 10px 16px;
+    border-radius: 12px;
+    background-color: #ccc;
+    border: none;
+}
+
+#summary-delete-btn:hover {
+    cursor: pointer;
 }

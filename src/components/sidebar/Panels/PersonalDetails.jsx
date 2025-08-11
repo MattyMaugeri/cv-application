@@ -3,13 +3,13 @@ import Button from "../Button.jsx";
 export default function PersonalDetailsPanel({ isToggled, onShow }) {
 
     return (
-        <div className="sidebar-card">
-            <div className="sidebar-headers">
+        <div className="panels">
+            <div className="panels-headers">
                 <Button header='Personal Details' handleClick={onShow} />
             </div>
 
             {isToggled ? (
-                <form className="sidebar-form" id="personal-form">
+                <form className="panels-form" id="personal-form">
                     <label>Full Name</label>
                     <input type="text" placeholder="Enter Full Name" />
 

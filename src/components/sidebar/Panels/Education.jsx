@@ -3,15 +3,15 @@ import Button from "../Button.jsx";
 export default function Education({ isToggled, onShow }) {
 
     return (
-        <div className="sidebar-card">
-            <div className="sidebar-headers">
+        <div className="panels">
+            <div className="panels-headers">
                 <Button header="Education" handleClick={onShow} />
             </div>
 
             {isToggled ? (
-                <div className="education-content">
+                <div className="panels-content" id="education-content">
                     <div className="education-list"></div>
-                    <form >
+                    <form className="panels-form" id="education-form">
                         <label>Degree</label>
                         <input type="text" placeholder="Enter your degree"></input>
 

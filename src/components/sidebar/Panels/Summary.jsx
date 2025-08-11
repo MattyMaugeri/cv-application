@@ -3,16 +3,16 @@ import Button from "../Button.jsx";
 export default function Summary({ isToggled, onShow }) {
 
     return (
-        <div className="sidebar-card">
-            <div className="sidebar-headers">
+        <div className="panels">
+            <div className="panels-headers">
                 <Button header="Summary" handleClick={onShow} />
             </div>
 
             {isToggled ? (
-                <div className="summary-content">
-                    <textarea placeholder="Enter your summary here"></textarea>
+                <div className="panels-content" id="summary-content">
+                    <textarea id="summary-input" placeholder="Enter your summary here"></textarea>
 
-                    <button>Delete Summary</button>
+                    <button id="summary-delete-btn">Delete Summary</button>
                 </div>
             ) : ""}
         </div>
