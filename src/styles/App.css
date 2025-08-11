@@ -24,7 +24,7 @@ body {
 }
 
 .sidebar-title {
-    padding: 8px 0 26px 0;
+    padding: 8px 0;
 }
 
 .sidebar-card {
@@ -32,11 +32,22 @@ body {
     padding: 0 0 20px 0;
 }
 
-.sidebar-headers {
+.sidebar-btns {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 0 8px 24px 8px;
+    align-items: center;
+    width: 100%;
+    padding: 24px 28px;
+    border: none;
+    /* background-color: #f5f5f5; */
+}
+
+.sidebar-btns:hover {
+    cursor: pointer;
+}
+
+.sidebar-btns svg {
+    width: 32px;
 }
 
 .sidebar-form {
