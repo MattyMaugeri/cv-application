@@ -5,13 +5,13 @@ export default function HeaderDisplay({ formData }) {
         <div className="resume-header">
 
             <div className="header-left">
-                <h2 className="user-name">
+                <h1 className="user-name">
                     {formData.name <= 0 ? 'Your Name' : formData.name}
-                </h2>
+                </h1>
 
-                <h4 className="job-title">
+                <h2 className="job-title">
                     {formData.title <= 0 ? 'Your Title' : formData.title}
-                </h4>
+                </h2>
             </div>
 
             <div className="header-right">

@@ -15,13 +15,22 @@ function App() {
 
   const [summaryData, setSummaryData] = useState('');
 
+  const [skillsData, setSkillsData] = useState([]);
+
   return (
     <>
-      <Sidebar 
-      formData={formData} setFormData={setFormData} 
-      summaryData={summaryData} setSummaryData={setSummaryData}/>
+      <Sidebar
+        formData={formData} setFormData={setFormData}
+        summaryData={summaryData} setSummaryData={setSummaryData}
+        skillsData={skillsData} setSkillsData={setSkillsData}
+      />
 
-      <Resume formData={formData} summaryData={summaryData}/>
+      <Resume
+        formData={formData}
+        summaryData={summaryData}
+        skillsData={skillsData}
+      />
+
 
     </>
   )

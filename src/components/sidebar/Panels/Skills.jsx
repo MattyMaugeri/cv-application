@@ -1,18 +1,17 @@
 import { useState } from "react";
 import Button from "../Button.jsx";
 
-export default function Skills({ isToggled, onShow }) {
-    const [skills, setSkills] = useState([]);
+export default function Skills({ isToggled, onShow, skillsData, setSkillsData }) {
     const [inputValue, setInputValue] = useState('');
 
     function handleAddSkill() {
-        setSkills([...skills, { id: crypto.randomUUID(), value: inputValue }]);
+        setSkillsData([...skillsData, { id: crypto.randomUUID(), value: inputValue }]);
         setInputValue('');
     }
 
     function handleDeleteSkill(id) {
-        const newSkills = skills.filter(skill => skill.id !== id);
-        setSkills(newSkills);
+        const newSkills = skillsData.filter(skill => skill.id !== id);
+        setSkillsData(newSkills);
     }
 
     return (
@@ -25,11 +24,10 @@ export default function Skills({ isToggled, onShow }) {
                 <div className="panels-content" id="skills-content">
                     <div className="skills-nav">
 
-                        <input
-                            type="text"
-                            placeholder="Enter a skill..."
-                            onChange={(e) => setInputValue(e.target.value)}
+                        <CustomInput
                             value={inputValue}
+                            onChange={(e) => setInputValue(e.target.value)}
+                            placeholder="Enter a skill..."
                         />
 
                         <button
@@ -40,7 +38,7 @@ export default function Skills({ isToggled, onShow }) {
                             Add Skill</button>
                     </div>
 
-                    <SkillsList skills={skills} handleDelete={handleDeleteSkill} />
+                    <SkillsList skills={skillsData} handleDelete={handleDeleteSkill} />
 
                 </div>
             ) : ""}
@@ -67,14 +65,13 @@ function SkillsList({ skills, handleDelete }) {
     )
 }
 
-function CustomInput({ placeholder }) {
-    const [value, setValue] = useState("");
+function CustomInput({ value, onChange, placeholder }) {
 
     return (
         <input
             type="text"
             value={value}
-            onChange={(event) => setValue(event.target.value)}
+            onChange={onChange}
             placeholder={placeholder}
         />
     );

@@ -14,16 +14,28 @@ export default function Summary({ isToggled, onShow, summaryData, setSummaryData
 
             {isToggled ? (
                 <div className="panels-content" id="summary-content">
-                    <textarea
+                    <CustomTextarea
+                        value={summaryData}
+                        onChange={handleSummaryChange}
                         id="summary-input"
                         placeholder="Enter your summary here"
-                        value={summaryData}
-                        onChange={handleSummaryChange}>
-                    </textarea>
-
+                    />
+                    
                     <button id="delete-summary-btn" className="delete-btns">Delete Summary</button>
                 </div>
             ) : ""}
         </div>
+    )
+}
+
+function CustomTextarea({ value, onChange, id, placeholder }) {
+
+    return (
+        <textarea
+            value={value}
+            onChange={onChange}
+            id={id}
+            placeholder={placeholder}
+        />
     )
 }
