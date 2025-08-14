@@ -166,13 +166,13 @@ textarea {
     border-bottom: 2px solid grey;
 }
 
-.content-nav {
+.subcontent-nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.experience-content {
+.resume-subcontent {
     display: grid;
     gap: 12px;
 }

@@ -1,25 +1,25 @@
 import Button from "../Button.jsx";
 
-export default function Experience({ isToggled, onShow, experienceFormData, setExperienceFormData }) {
+export default function Experience({ isToggled, onShow, experienceData, setExperienceData }) {
 
     function handleTitleChange(e) {
-        setExperienceFormData(prev => ({ ...prev, title: e.target.value }));
+        setExperienceData(prev => ({ ...prev, title: e.target.value }));
     }
 
     function handleCompanyChange(e) {
-        setExperienceFormData(prev => ({ ...prev, company: e.target.value }));
+        setExperienceData(prev => ({ ...prev, company: e.target.value }));
     }
 
     function handleStartDateChange(e) {
-        setExperienceFormData(prev => ({ ...prev, start: e.target.value }));
+        setExperienceData(prev => ({ ...prev, start: e.target.value }));
     }
 
     function handleEndDateChange(e) {
-        setExperienceFormData(prev => ({ ...prev, end: e.target.value }));
+        setExperienceData(prev => ({ ...prev, end: e.target.value }));
     }
 
     function handleDescriptionChange(e) {
-        setExperienceFormData(prev => ({ ...prev, description: e.target.value }));
+        setExperienceData(prev => ({ ...prev, description: e.target.value }));
     }
 
     return (
@@ -33,10 +33,9 @@ export default function Experience({ isToggled, onShow, experienceFormData, setE
 
                     <form className="panels-form" id="experience-form">
                         <label>Position Title</label>
-                        {/* <input type="text" placeholder="Enter Position Title"></input> */}
                         <CustomInput
                             type="text"
-                            value={experienceFormData.title}
+                            value={experienceData.title}
                             onChange={handleTitleChange}
                             placeholder="Enter Position Title"
                         />
@@ -44,7 +43,7 @@ export default function Experience({ isToggled, onShow, experienceFormData, setE
                         <label>Company Name</label>
                         <CustomInput
                             type="text"
-                            value={experienceFormData.company}
+                            value={experienceData.company}
                             onChange={handleCompanyChange}
                             placeholder="Enter Company Name"
                         />
@@ -54,7 +53,7 @@ export default function Experience({ isToggled, onShow, experienceFormData, setE
                                 <label>Start Date</label>
                                 <CustomInput
                                     type="date"
-                                    value={experienceFormData.start}
+                                    value={experienceData.start}
                                     onChange={handleStartDateChange}
                                 />
                             </span>
@@ -63,7 +62,7 @@ export default function Experience({ isToggled, onShow, experienceFormData, setE
                                 <label>End Date</label>
                                 <CustomInput
                                     type="date"
-                                    value={experienceFormData.end}
+                                    value={experienceData.end}
                                     onChange={handleEndDateChange}
                                 />
                             </span>
@@ -71,7 +70,7 @@ export default function Experience({ isToggled, onShow, experienceFormData, setE
 
                         <label>Description</label>
                         <CustomTextarea
-                            value={experienceFormData.description}
+                            value={experienceData.description}
                             onChange={handleDescriptionChange}
                             id="experience-description"
                             placeholder="Enter Brief Job Description"

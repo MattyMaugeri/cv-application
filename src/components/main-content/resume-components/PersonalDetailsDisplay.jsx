@@ -1,31 +1,31 @@
 
-export default function HeaderDisplay({ personalFormData }) {
+export default function HeaderDisPersonalDetailsDisplayplay({ personalDetailsData }) {
 
     return (
         <div className="sections" id="header-section">
 
             <div className="header-left">
                 <h1 className="user-name">
-                    {personalFormData.name <= 0 ? 'Your Name' : personalFormData.name}
+                    {personalDetailsData.name <= 0 ? 'Your Name' : personalDetailsData.name}
                 </h1>
 
                 <h2 className="job-title">
-                    {personalFormData.title <= 0 ? 'Your Title' : personalFormData.title}
+                    {personalDetailsData.title <= 0 ? 'Your Title' : personalDetailsData.title}
                 </h2>
             </div>
 
             <div className="header-right">
                 <ul className="contact-list">
                     <li className="contact-list-item" id="email">
-                        {personalFormData.email.length <= 0 ? 'Your Email' : personalFormData.email}
+                        {personalDetailsData.email.length <= 0 ? 'Your Email' : personalDetailsData.email}
                     </li>
 
                     <li className="contact-list-item" id="phone">
-                        {personalFormData.phone.length <= 0 ? 'Your Phone Number' : personalFormData.phone}
+                        {personalDetailsData.phone.length <= 0 ? 'Your Phone Number' : personalDetailsData.phone}
                     </li>
 
                     <li className="contact-list-item" id="address">
-                        {personalFormData.address.length <= 0 ? 'Your Address' : personalFormData.address}
+                        {personalDetailsData.address.length <= 0 ? 'Your Address' : personalDetailsData.address}
                     </li>
                 </ul>
 

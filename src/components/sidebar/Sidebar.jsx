@@ -6,10 +6,11 @@ import Education from "./Panels/Education.jsx";
 import Experience from "./Panels/Experience.jsx";
 
 export default function Sidebar({
-    personalFormData, setPersonalFormData,
+    personalDetailsData, setPersonalDetailsData,
     summaryData, setSummaryData,
     skillsData, setSkillsData,
-    experienceFormData, setExperienceFormData
+    experienceData, setExperienceData,
+    educationData, setEducationData
 }) {
 
     const [activePanel, setActivePanel] = useState(0);
@@ -21,8 +22,8 @@ export default function Sidebar({
             <PersonalDetails
                 isToggled={activePanel === 0}
                 onShow={() => setActivePanel(0)}
-                personalFormData={personalFormData}
-                setPersonalFormData={setPersonalFormData}
+                personalDetailsData={personalDetailsData}
+                setPersonalDetailsData={setPersonalDetailsData}
             />
 
             <Summary
@@ -42,14 +43,16 @@ export default function Sidebar({
             <Experience
                 isToggled={activePanel === 4}
                 onShow={() => setActivePanel(4)}
-                experienceFormData={experienceFormData}
-                setExperienceFormData={setExperienceFormData}
+                experienceData={experienceData}
+                setExperienceData={setExperienceData}
             />
 
-            {/* <Education
+            <Education
                 isToggled={activePanel === 3}
                 onShow={() => setActivePanel(3)}
-            /> */}
+                educationData={educationData}
+                setEducationData={setEducationData}
+            />
 
 
 

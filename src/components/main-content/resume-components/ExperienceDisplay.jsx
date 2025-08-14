@@ -1,25 +1,25 @@
 
-export default function ExperienceDisplay({ experienceFormData }) {
+export default function ExperienceDisplay({ experienceData }) {
 
     return (
 
         <div className="sections" id="experience-section">
 
-            <h2 className="experience-header">Experience</h2>
+            <h2 className="resume-subheader">Experience</h2>
 
-            <div className="experience-content">
+            <div className="resume-subcontent">
 
-                <nav className="content-nav">
-                    <h3 className="content-title" id="experience-job-title">{experienceFormData.title.length <= 0 ? 'Job Title' : experienceFormData.title}</h3>
+                <nav className="subcontent-nav">
+                    <h3 className="subcontent-title" id="experience-job-title">{experienceData.title.length <= 0 ? 'Job Title' : experienceData.title}</h3>
 
-                    <div className="date-containers">
-                        {experienceFormData.start === "" ? 'Start Date' : experienceFormData.start} - {experienceFormData.end === "" ? 'End Date' : experienceFormData.end}
+                    <div className="subcontent-date-containers">
+                        {experienceData.start === "" ? 'Start Date' : experienceData.start} - {experienceData.end === "" ? 'End Date' : experienceData.end}
                     </div>
                 </nav>
 
-                <h5 className="content-subtitle" id="experience-company-title">{experienceFormData.company.length <= 0 ? 'Company' : experienceFormData.company}</h5>
+                <h5 className="subcontent-subtitle" id="experience-company-name">{experienceData.company.length <= 0 ? 'Company' : experienceData.company}</h5>
 
-                <div className="content-description" id="experience-description">{experienceFormData.description.length <= 0 ? 'Brief job description' : experienceFormData.description}</div>
+                <div className="subcontent-description" id="experience-description">{experienceData.description.length <= 0 ? 'Brief job description' : experienceData.description}</div>
 
             </div>
         </div>
