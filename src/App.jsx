@@ -7,16 +7,21 @@ function App() {
 
   const [formData, setFormData] = useState({
     name: '',
+    title: '',
     email: '',
     phone: '',
     address: ''
   });
 
+  const [summaryData, setSummaryData] = useState('');
+
   return (
     <>
-      <Sidebar formData={formData} setFormData={setFormData}/>
+      <Sidebar 
+      formData={formData} setFormData={setFormData} 
+      summaryData={summaryData} setSummaryData={setSummaryData}/>
 
-      <Resume formData={formData}/>
+      <Resume formData={formData} summaryData={summaryData}/>
 
     </>
   )

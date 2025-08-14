@@ -5,7 +5,7 @@ import Skills from "./Panels/Skills.jsx";
 import Education from "./Panels/Education.jsx";
 import Experience from "./Panels/Experience.jsx";
 
-export default function Sidebar({ formData, setFormData }) {
+export default function Sidebar({ formData, setFormData, summaryData, setSummaryData }) {
     const [activePanel, setActivePanel] = useState(0);
 
 
@@ -20,22 +20,24 @@ export default function Sidebar({ formData, setFormData }) {
                 setFormData={setFormData}
             />
 
-            {/* <Summary
+            <Summary
                 isToggled={activePanel === 1}
                 onShow={() => setActivePanel(1)}
+                summaryData={summaryData}
+                setSummaryData={setSummaryData}
             />
 
-            <Skills
+            {/* <Skills
                 isToggled={activePanel === 2}
                 onShow={() => setActivePanel(2)}
-            />
+            /> */}
 
-            <Education
+            {/* <Education
                 isToggled={activePanel === 3}
                 onShow={() => setActivePanel(3)}
-            />
+            /> */}
 
-            <Experience
+            {/* <Experience
                 isToggled={activePanel === 4}
                 onShow={() => setActivePanel(4)}
             /> */}

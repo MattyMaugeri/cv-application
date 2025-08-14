@@ -1,6 +1,10 @@
 import Button from "../Button.jsx";
 
-export default function Summary({ isToggled, onShow }) {
+export default function Summary({ isToggled, onShow, summaryData, setSummaryData }) {
+
+    function handleSummaryChange(e) {
+        setSummaryData(e.target.value);
+    }
 
     return (
         <div className="panels">
@@ -10,7 +14,12 @@ export default function Summary({ isToggled, onShow }) {
 
             {isToggled ? (
                 <div className="panels-content" id="summary-content">
-                    <textarea id="summary-input" placeholder="Enter your summary here"></textarea>
+                    <textarea
+                        id="summary-input"
+                        placeholder="Enter your summary here"
+                        value={summaryData}
+                        onChange={handleSummaryChange}>
+                    </textarea>
 
                     <button id="delete-summary-btn" className="delete-btns">Delete Summary</button>
                 </div>

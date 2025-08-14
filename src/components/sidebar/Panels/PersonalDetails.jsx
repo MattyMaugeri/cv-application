@@ -6,6 +6,10 @@ export default function PersonalDetails({ isToggled, onShow, formData, setFormDa
         setFormData(prev => ({ ...prev, name: e.target.value }));
     }
 
+    function handleTitleChange(e) {
+        setFormData(prev => ({ ...prev, title: e.target.value }));
+    }
+
     function handleEmailChange(e) {
         setFormData(prev => ({ ...prev, email: e.target.value }));
     }
@@ -31,6 +35,13 @@ export default function PersonalDetails({ isToggled, onShow, formData, setFormDa
                         value={formData.name}
                         onChange={handleNameChange}
                         placeholder="Enter Full Name" />
+
+                    <label>Title</label>
+                    <CustomInput
+                        value={formData.title}
+                        onChange={handleTitleChange}
+                        placeholder="Enter Title / Tag Line"
+                    />
 
                     <label>Email</label>
                     <CustomInput
