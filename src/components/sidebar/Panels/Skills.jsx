@@ -43,7 +43,6 @@ export default function Skills({ isToggled, onShow, skillsData, setSkillsData })
                 </div>
             ) : ""}
 
-
         </div>
     )
 }

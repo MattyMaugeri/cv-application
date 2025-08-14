@@ -5,7 +5,7 @@ import Resume from './components/main-content/Resume'
 
 function App() {
 
-  const [formData, setFormData] = useState({
+  const [personalFormData, setPersonalFormData] = useState({
     name: '',
     title: '',
     email: '',
@@ -17,18 +17,28 @@ function App() {
 
   const [skillsData, setSkillsData] = useState([]);
 
+  const [experienceFormData, setExperienceFormData] = useState ({
+    title: '',
+    company: '',
+    start: '',
+    end: '',
+    description: ''
+  });
+
   return (
     <>
       <Sidebar
-        formData={formData} setFormData={setFormData}
+        personalFormData={personalFormData} setPersonalFormData={setPersonalFormData}
         summaryData={summaryData} setSummaryData={setSummaryData}
         skillsData={skillsData} setSkillsData={setSkillsData}
+        experienceFormData={experienceFormData} setExperienceFormData={setExperienceFormData}
       />
 
       <Resume
-        formData={formData}
+        personalFormData={personalFormData}
         summaryData={summaryData}
         skillsData={skillsData}
+        experienceFormData={experienceFormData}
       />
 
 

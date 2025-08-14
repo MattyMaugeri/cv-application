@@ -2,7 +2,7 @@
 export default function SummaryDisplay({ summaryData }) {
 
     return (
-        <div className="resume-summary">
+        <div className="sections" id="summary-section">
 
             <h2 className="summary-header">Summary</h2>
 

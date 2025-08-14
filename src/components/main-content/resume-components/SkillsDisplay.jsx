@@ -2,7 +2,7 @@
 export default function SkillsDisplay({ skillsData }) {
 
     return (
-        <div className="resume-skills">
+        <div className="sections" id="skills-section">
 
             <h2 className="skills-header">Skills</h2>
 
