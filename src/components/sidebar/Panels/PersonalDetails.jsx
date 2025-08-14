@@ -1,21 +1,21 @@
 import Button from "../Button.jsx";
 
-function CustomInput({ value, onChange, placeholder }) {
-    return (
-        <input
-            type="text"
-            value={value}
-            onChange={onChange}
-            placeholder={placeholder}
-        />
-    );
-}
-
-
 export default function PersonalDetails({ isToggled, onShow, formData, setFormData }) {
 
     function handleNameChange(e) {
-        setFormData(prev => ({ ...prev, name: e.target.value }))
+        setFormData(prev => ({ ...prev, name: e.target.value }));
+    }
+
+    function handleEmailChange(e) {
+        setFormData(prev => ({ ...prev, email: e.target.value }));
+    }
+
+    function handlePhoneChange(e) {
+        setFormData(prev => ({ ...prev, phone: e.target.value }));
+    }
+
+    function handleAddressChange(e) {
+        setFormData(prev => ({ ...prev, address: e.target.value }));
     }
 
     return (
@@ -33,18 +33,42 @@ export default function PersonalDetails({ isToggled, onShow, formData, setFormDa
                         placeholder="Enter Full Name" />
 
                     <label>Email</label>
-                    
-                    <input name="email" placeholder="Enter Email" />
+                    <CustomInput
+                        value={formData.email}
+                        onChange={handleEmailChange}
+                        placeholder="Enter Email"
+                    />
 
                     <label>Phone Number</label>
-                    <input name="phone" placeholder="Enter Phone Number" />
+                    <CustomInput
+                        value={formData.phone}
+                        onChange={handlePhoneChange}
+                        placeholder="Enter Phone Number"
+                    />
 
                     <label>Address</label>
-                    <input name="address" placeholder="Enter Address" />
+                    <CustomInput
+                        value={formData.address}
+                        onChange={handleAddressChange}
+                        placeholder="Enter Address"
+                    />
+
                 </form>
             ) : ""}
 
         </div>
 
     )
+}
+
+
+function CustomInput({ value, onChange, placeholder }) {
+    return (
+        <input
+            type="text"
+            value={value}
+            onChange={onChange}
+            placeholder={placeholder}
+        />
+    );
 }
