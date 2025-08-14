@@ -12,7 +12,7 @@ export default function Summary({ isToggled, onShow }) {
                 <div className="panels-content" id="summary-content">
                     <textarea id="summary-input" placeholder="Enter your summary here"></textarea>
 
-                    <button id="delete-summary-btn">Delete Summary</button>
+                    <button id="delete-summary-btn" className="delete-btns">Delete Summary</button>
                 </div>
             ) : ""}
         </div>

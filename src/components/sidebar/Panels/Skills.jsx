@@ -27,12 +27,13 @@ export default function Skills({ isToggled, onShow }) {
 
                         <input
                             type="text"
-                            placeholder="Add skill..."
+                            placeholder="Enter a skill..."
                             onChange={(e) => setInputValue(e.target.value)}
                             value={inputValue}
                         />
 
                         <button
+                            className="add-btns"
                             id="add-skills-btn"
                             onClick={handleAddSkill}
                         >
@@ -55,9 +56,11 @@ function SkillsList({ skills, handleDelete }) {
         <ul className="skills-list">
             {skills.map((skill) => {
                 return (
-                    <li key={skill.id} className="skill-list-item">{skill.value}
-                        <button className="delete-skill-btn" onClick={() => handleDelete(skill.id)}>Remove</button>
+                    <li key={skill.id} className="skills-list-item">
+                        <p className="skill-value">{skill.value}</p>
+                        <button className="delete-btns" id="delete-skill-btn" onClick={() => handleDelete(skill.id)}>Remove</button>
                     </li>
+
                 )
             })}
         </ul>

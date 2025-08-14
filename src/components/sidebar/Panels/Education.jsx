@@ -10,7 +10,6 @@ export default function Education({ isToggled, onShow }) {
 
             {isToggled ? (
                 <div className="panels-content" id="education-content">
-                    <div className="education-list"></div>
                     <form className="panels-form" id="education-form">
                         <label>Degree</label>
                         <input type="text" placeholder="Enter your degree"></input>
@@ -18,14 +17,26 @@ export default function Education({ isToggled, onShow }) {
                         <label>University</label>
                         <input type="text" placeholder="Enter School/ University"></input>
 
-                        <label>Start Date</label>
-                        <input type="date"></input>
+                        <div className="date-spans">
+                            <span className="date-span">
+                                <label>Start Date</label>
+                                <input type="date"></input>
+                            </span>
 
-                        <label>End Date</label>
-                        <input type="date"></input>
+                            <span className="date-span">
+                                <label>End Date</label>
+                                <input type="date"></input>
+                            </span>
+                        </div>
+
+                        <label>Location</label>
+                        <input type="text" placeholder="Enter Country" />
                     </form>
 
-                    <button>Add Education</button>
+                    <button className="add-btns" id="add-education-btn">Add Education</button>
+
+                    <div className="education-list"></div>
+
                 </div>
             ) : ""}
 

@@ -1,22 +1,22 @@
-import { useState } from "react";
 import Button from "../Button.jsx";
 
-function CustomInput({ placeholder }) {
-    const [value, setValue] = useState("");
-
+function CustomInput({ value, onChange, placeholder }) {
     return (
         <input
             type="text"
             value={value}
-            onChange={(event) => setValue(event.target.value)}
+            onChange={onChange}
             placeholder={placeholder}
         />
     );
 }
 
 
-export default function PersonalDetailsPanel({ isToggled, onShow }) {
-    const [name, setName] = useState('');
+export default function PersonalDetails({ isToggled, onShow, formData, setFormData }) {
+
+    function handleNameChange(e) {
+        setFormData(prev => ({ ...prev, name: e.target.value }))
+    }
 
     return (
         <div className="panels">
@@ -27,16 +27,20 @@ export default function PersonalDetailsPanel({ isToggled, onShow }) {
             {isToggled ? (
                 <form className="panels-form" id="personal-form">
                     <label>Full Name</label>
-                    <CustomInput placeholder="Enter Full Name" />
+                    <CustomInput
+                        value={formData.name}
+                        onChange={handleNameChange}
+                        placeholder="Enter Full Name" />
 
                     <label>Email</label>
-                    <input type="text" placeholder="Enter Email" />
+                    
+                    <input name="email" placeholder="Enter Email" />
 
                     <label>Phone Number</label>
-                    <input type="text" placeholder="Enter Phone Number" />
+                    <input name="phone" placeholder="Enter Phone Number" />
 
                     <label>Address</label>
-                    <input type="text" placeholder="Enter Address" />
+                    <input name="address" placeholder="Enter Address" />
                 </form>
             ) : ""}
 
