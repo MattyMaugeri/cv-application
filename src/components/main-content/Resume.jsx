@@ -4,7 +4,7 @@ import PersonalDetailsDisplay from "./resume-components/PersonalDetailsDisplay"
 import SkillsDisplay from "./resume-components/SkillsDisplay"
 import SummaryDisplay from "./resume-components/SummaryDisplay"
 
-export default function Resume({ personalDetailsData, summaryData, skillsData, experienceData, experienceList, educationData }) {
+export default function Resume({ personalDetailsData, summaryData, skillsData, experienceData, experienceList, educationData, educationList }) {
 
     return (
         <div className="resume-container">
@@ -17,7 +17,7 @@ export default function Resume({ personalDetailsData, summaryData, skillsData, e
 
             <ExperienceDisplay experienceData={experienceData} experienceList={experienceList} />
 
-            <EducationDisplay educationData={educationData} />
+            <EducationDisplay educationData={educationData} educationList={educationList}/>
 
 
 

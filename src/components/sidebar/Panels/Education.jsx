@@ -1,6 +1,7 @@
+import EducationListitem from "../../main-content/resume-components/EducationListItem.jsx";
 import Button from "../Button.jsx";
 
-export default function Education({ isToggled, onShow, educationData, setEducationData }) {
+export default function Education({ isToggled, onShow, educationData, setEducationData, educationList, setEducationList }) {
 
     function handleDegreeChange(e) {
         setEducationData(prev => ({ ...prev, degree: e.target.value }));
@@ -20,6 +21,10 @@ export default function Education({ isToggled, onShow, educationData, setEducati
 
     function handleLocationChange(e) {
         setEducationData(prev => ({ ...prev, location: e.target.value }));
+    }
+
+    function handleAddEducation() {
+        setEducationList(prev => ([...prev, {...educationData, id: crypto.randomUUID()}]));
     }
 
     return (
@@ -78,9 +83,13 @@ export default function Education({ isToggled, onShow, educationData, setEducati
 
                     </form>
 
-                    <button className="add-btns" id="add-education-btn">Add Education</button>
+                    <button className="add-btns" id="add-education-btn" onClick={handleAddEducation}>Add Education</button>
 
-                    <div className="education-list"></div>
+                    <ul className="sidebar-education-list">
+                        {educationList.map((education) => {
+                            return <EducationListitem key={education.id} education={education} />
+                        })}
+                    </ul>
 
                 </div>
             ) : ""}

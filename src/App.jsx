@@ -36,6 +36,7 @@ function App() {
   });
 
   const [experienceList, setExperienceList] = useState([]);
+  const [educationList, setEducationList] = useState([]);
 
   return (
     <>
@@ -45,7 +46,7 @@ function App() {
         summaryData={summaryData} setSummaryData={setSummaryData}
         skillsData={skillsData} setSkillsData={setSkillsData}
         experienceData={experienceData} setExperienceData={setExperienceData} experienceList={experienceList} setExperienceList={setExperienceList}
-        educationData={educationData} setEducationData={setEducationData}
+        educationData={educationData} setEducationData={setEducationData} educationList={educationList} setEducationList={setEducationList}
       />
 
       <Resume
@@ -53,7 +54,7 @@ function App() {
         summaryData={summaryData}
         skillsData={skillsData}
         experienceData={experienceData} experienceList={experienceList}
-        educationData={educationData}
+        educationData={educationData} educationList={educationList}
       />
 
     </>

@@ -10,7 +10,7 @@ export default function Sidebar({
     summaryData, setSummaryData,
     skillsData, setSkillsData,
     experienceData, setExperienceData, experienceList, setExperienceList,
-    educationData, setEducationData
+    educationData, setEducationData, educationList, setEducationList
 }) {
 
     const [activePanel, setActivePanel] = useState(0);
@@ -54,6 +54,8 @@ export default function Sidebar({
                 onShow={() => setActivePanel(3)}
                 educationData={educationData}
                 setEducationData={setEducationData}
+                educationList={educationList}
+                setEducationList={setEducationList}
             />
 
 
