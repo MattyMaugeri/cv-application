@@ -89,7 +89,7 @@ export default function Experience({ isToggled, onShow, experienceData, setExper
 
                     <button className="add-btns" id="add-experience-btn" onClick={handleAddExperience}>Add Experience</button>
 
-                    <div className="sidebar-experience-container">
+                    <div className="sidebar-experience-list-container">
                         {experienceList.map((experience) => {
                             return (
                                 <ul className="sidebar-experience-list" key={experience.id}>

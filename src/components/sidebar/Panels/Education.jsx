@@ -24,8 +24,14 @@ export default function Education({ isToggled, onShow, educationData, setEducati
     }
 
     function handleAddEducation() {
-        setEducationList(prev => ([...prev, {...educationData, id: crypto.randomUUID()}]));
+        setEducationList(prev => ([...prev, { ...educationData, id: crypto.randomUUID() }]));
     }
+
+    function handleRemoveEducation(id) {
+        const newList = educationList.filter(education => education.id !== id);
+        setEducationList(newList);
+    }
+
 
     return (
         <div className="panels">
@@ -85,11 +91,16 @@ export default function Education({ isToggled, onShow, educationData, setEducati
 
                     <button className="add-btns" id="add-education-btn" onClick={handleAddEducation}>Add Education</button>
 
-                    <ul className="sidebar-education-list">
+                    <div className="sidebar-education-list-container">
                         {educationList.map((education) => {
-                            return <EducationListitem key={education.id} education={education} />
+                            return (
+                                <ul key={education.id} className="sidebar-education-list">
+                                    <EducationListitem education={education} />
+                                    <button className="remove-education-btn" onClick={() => handleRemoveEducation(education.id)}>Delete</button>
+                                </ul>
+                            )
                         })}
-                    </ul>
+                    </div>
 
                 </div>
             ) : ""}
