@@ -25,6 +25,14 @@ export default function Experience({ isToggled, onShow, experienceData, setExper
 
     function handleAddExperience() {
         setExperienceList(prev => [...prev, { ...experienceData, id: crypto.randomUUID() }]);
+        setExperienceData({
+            id: '',
+            title: '',
+            company: '',
+            start: '',
+            end: '',
+            description: ''
+        })
     }
 
     function handleRemoveExperience(id) {

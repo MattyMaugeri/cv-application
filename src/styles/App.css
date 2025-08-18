@@ -21,10 +21,12 @@ button:hover {
 ul, li {
     list-style: none;
     text-decoration: none;
+    font-size: 15px;
 }
 
 .sidebar {
-    border: 1px solid black;
+    max-height: 800px;
+    overflow-y: auto;
 
     flex: 0 0 30%;
 
@@ -144,6 +146,7 @@ textarea {
 /* MAIN CONTENT STYLES */
 
 .resume-container {
+    height: 100vh;
     display: flex;
     flex-direction: column;
     flex: 0 0 60%;
@@ -153,17 +156,45 @@ textarea {
     padding: 40px;
 }
 
+.resume-container > div:not(:first-child) {
+    min-height: 125px;
+}
+
+.resume-subheader, .job-title {
+    font-size: 20px;
+
+}
+
 .sections {
     display: flex;
     flex-direction: column;
+    border-bottom: 1px solid #ccc;
+    padding: 24px 0;
+    gap: 12px;
 }
 
 #header-section {
     flex-direction: row;
     justify-content: space-between;
+    padding-top: 0;
 
-    padding-bottom: 20px;
     border-bottom: 2px solid grey;
+}
+
+.user-name {
+    font-size: 38px;
+}
+
+.subcontent-title {
+    font-size: 18px;
+}
+
+.subcontent-subtitle {
+    font-size: 16px;
+}
+
+.subcontent-description, .subcontent-date-containers {
+    font-size: 15px;
 }
 
 .subcontent-nav {
@@ -174,5 +205,21 @@ textarea {
 
 .resume-subcontent-display {
     display: grid;
+    gap: 6px;
+}
+
+.resume-skills-list {
+    display: grid;
+    gap: 8px;
+    padding-left: 36px;
+}
+
+.resume-skills-list-item {
+    list-style: square;
+}
+
+.resume-education-list, .resume-experience-list {
+    display: flex;
+    flex-direction: column;
     gap: 12px;
 }

@@ -13,7 +13,7 @@ export default function EducationListitem({ education }) {
                     </div>
                 </nav>
 
-                <h4>{education.university}</h4>
+                <h4 className="subcontent-subtitle">{education.university}</h4>
 
                 <h4 className="education-location">{education.location}</h4>
 

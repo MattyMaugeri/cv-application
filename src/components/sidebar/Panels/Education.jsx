@@ -25,6 +25,14 @@ export default function Education({ isToggled, onShow, educationData, setEducati
 
     function handleAddEducation() {
         setEducationList(prev => ([...prev, { ...educationData, id: crypto.randomUUID() }]));
+        setEducationData({
+            id: '',
+            degree: '',
+            university: '',
+            start: '',
+            end: '',
+            location: ''
+        });
     }
 
     function handleRemoveEducation(id) {

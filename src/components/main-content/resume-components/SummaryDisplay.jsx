@@ -3,17 +3,16 @@ export default function SummaryDisplay({ summaryData }) {
 
     return (
         <div className="sections" id="summary-section">
+            <h2 className="resume-subheader">Summary</h2>
 
             <div className="resume-subcontent-display">
 
 
-                <h2 className="summary-header">Summary</h2>
-
                 <div className="summary-description">
-                    {summaryData.length <= 0 ? 'Professional Summary' : summaryData}
+                    {summaryData}
                 </div>
             </div>
-            
+
         </div>
 
     )

@@ -11,19 +11,19 @@ export default function EducationDisplay({ educationData, educationList }) {
             <div className="resume-subcontent-display">
 
                 <nav className="subcontent-nav">
-                    <h3 className="subcontent-title">{educationData.degree === "" ? 'Degree' : educationData.degree}</h3>
+                    <h3 className="subcontent-title">{educationData.degree}</h3>
 
                     <div className="subcontent-date-containers">
-                        {educationData.start === "" ? 'Start Date' : educationData.start} - {educationData.end === "" ? 'End Date' : educationData.end}
+                        {educationData.start} - {educationData.end}
                     </div>
                 </nav>
 
-                <h4>
-                    {educationData.university === "" ? 'University' : educationData.university}
+                <h4 className="subcontent-subtitle">
+                    {educationData.university}
                 </h4>
 
                 <h4 className="education-location">
-                    {educationData.location === "" ? 'Location' : educationData.location}
+                    {educationData.location}
                 </h4>
 
                 <div className="subcontent-description" id="education-location"></div>
