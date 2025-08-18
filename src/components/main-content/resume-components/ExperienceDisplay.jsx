@@ -1,4 +1,4 @@
-import ExperienceList from "./ExperienceList.jsx"
+import ExperienceListItem from "./ExperienceListItem.jsx"
 
 export default function ExperienceDisplay({ experienceData, experienceList }) {
 
@@ -24,8 +24,11 @@ export default function ExperienceDisplay({ experienceData, experienceList }) {
                 </div>
             </div>
 
-            <ExperienceList experienceList={experienceList} />
-
+            <ul className="resume-experience-list">
+                {experienceList.map((experience) => {
+                    return <ExperienceListItem key={experience.id} experience={experience} />
+                })}
+            </ul>
 
         </div>
     )

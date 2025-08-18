@@ -1,6 +1,7 @@
 import Button from "../Button.jsx";
+import ExperienceListItem from "../../main-content/resume-components/ExperienceListItem.jsx";
 
-export default function Experience({ isToggled, onShow, experienceData, setExperienceData, setExperienceList }) {
+export default function Experience({ isToggled, onShow, experienceData, setExperienceData, experienceList, setExperienceList }) {
 
     function handleTitleChange(e) {
         setExperienceData(prev => ({ ...prev, title: e.target.value }));
@@ -22,9 +23,13 @@ export default function Experience({ isToggled, onShow, experienceData, setExper
         setExperienceData(prev => ({ ...prev, description: e.target.value }));
     }
 
-    // Function must add experienceData object into experienceList
     function handleAddExperience() {
-        setExperienceList(prev => [...prev, {...experienceData, id: crypto.randomUUID()}]);
+        setExperienceList(prev => [...prev, { ...experienceData, id: crypto.randomUUID() }]);
+    }
+
+    function handleRemoveExperience(id) {
+        const newList = experienceList.filter(experience => experience.id !== id);
+        setExperienceList(newList);
     }
 
     return (
@@ -84,7 +89,17 @@ export default function Experience({ isToggled, onShow, experienceData, setExper
 
                     <button className="add-btns" id="add-experience-btn" onClick={handleAddExperience}>Add Experience</button>
 
-                    <div id="experience-list"></div>
+                    <div className="sidebar-experience-container">
+                        {experienceList.map((experience) => {
+                            return (
+                                <ul className="sidebar-experience-list" key={experience.id}>
+                                    <ExperienceListItem experience={experience} />
+                                    <button className="remove-experience-btn" onClick={() => handleRemoveExperience(experience.id)}>Delete</button>
+                                </ul>
+                            )
+                        })}
+                    </div>
+
 
                 </div>
             ) : ""}
