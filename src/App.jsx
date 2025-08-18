@@ -18,6 +18,7 @@ function App() {
   const [skillsData, setSkillsData] = useState([]);
 
   const [experienceData, setExperienceData] = useState({
+    id: crypto.randomUUID(),
     title: '',
     company: '',
     start: '',
@@ -26,12 +27,15 @@ function App() {
   });
 
   const [educationData, setEducationData] = useState({
+    id: crypto.randomUUID(),
     degree: '',
     university: '',
     start: '',
     end: '',
     location: ''
-  })
+  });
+
+  const [experienceList, setExperienceList] = useState([]);
 
   return (
     <>
@@ -40,7 +44,7 @@ function App() {
         personalDetailsData={personalDetailsData} setPersonalDetailsData={setPersonalDetailsData}
         summaryData={summaryData} setSummaryData={setSummaryData}
         skillsData={skillsData} setSkillsData={setSkillsData}
-        experienceData={experienceData} setExperienceData={setExperienceData}
+        experienceData={experienceData} setExperienceData={setExperienceData} experienceList={experienceList} setExperienceList={setExperienceList}
         educationData={educationData} setEducationData={setEducationData}
       />
 
@@ -48,7 +52,7 @@ function App() {
         personalDetailsData={personalDetailsData}
         summaryData={summaryData}
         skillsData={skillsData}
-        experienceData={experienceData}
+        experienceData={experienceData} experienceList={experienceList}
         educationData={educationData}
       />
 

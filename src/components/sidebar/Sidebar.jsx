@@ -9,7 +9,7 @@ export default function Sidebar({
     personalDetailsData, setPersonalDetailsData,
     summaryData, setSummaryData,
     skillsData, setSkillsData,
-    experienceData, setExperienceData,
+    experienceData, setExperienceData, experienceList, setExperienceList,
     educationData, setEducationData
 }) {
 
@@ -45,6 +45,8 @@ export default function Sidebar({
                 onShow={() => setActivePanel(4)}
                 experienceData={experienceData}
                 setExperienceData={setExperienceData}
+                experienceList={experienceList}
+                setExperienceList={setExperienceList}
             />
 
             <Education
@@ -53,8 +55,6 @@ export default function Sidebar({
                 educationData={educationData}
                 setEducationData={setEducationData}
             />
-
-
 
 
         </div>

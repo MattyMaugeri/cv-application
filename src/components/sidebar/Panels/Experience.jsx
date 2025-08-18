@@ -1,6 +1,6 @@
 import Button from "../Button.jsx";
 
-export default function Experience({ isToggled, onShow, experienceData, setExperienceData }) {
+export default function Experience({ isToggled, onShow, experienceData, setExperienceData, setExperienceList }) {
 
     function handleTitleChange(e) {
         setExperienceData(prev => ({ ...prev, title: e.target.value }));
@@ -20,6 +20,11 @@ export default function Experience({ isToggled, onShow, experienceData, setExper
 
     function handleDescriptionChange(e) {
         setExperienceData(prev => ({ ...prev, description: e.target.value }));
+    }
+
+    // Function must add experienceData object into experienceList
+    function handleAddExperience() {
+        setExperienceList(prev => [...prev, {...experienceData, id: crypto.randomUUID()}]);
     }
 
     return (
@@ -77,7 +82,7 @@ export default function Experience({ isToggled, onShow, experienceData, setExper
                         />
                     </form>
 
-                    <button className="add-btns" id="add-experience-btn">Add Experience</button>
+                    <button className="add-btns" id="add-experience-btn" onClick={handleAddExperience}>Add Experience</button>
 
                     <div id="experience-list"></div>
 
