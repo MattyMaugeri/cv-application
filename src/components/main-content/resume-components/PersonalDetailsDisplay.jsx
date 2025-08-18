@@ -4,6 +4,7 @@ export default function HeaderDisPersonalDetailsDisplayplay({ personalDetailsDat
     return (
         <div className="sections" id="header-section">
 
+
             <div className="header-left">
                 <h1 className="user-name">
                     {personalDetailsData.name <= 0 ? 'Your Name' : personalDetailsData.name}

@@ -143,11 +143,6 @@ textarea {
 
 /* MAIN CONTENT STYLES */
 
-.sections {
-    display: flex;
-    flex-direction: column;
-}
-
 .resume-container {
     display: flex;
     flex-direction: column;
@@ -156,6 +151,11 @@ textarea {
     border: 1px solid black;
     background-color: white;
     padding: 40px;
+}
+
+.sections {
+    display: flex;
+    flex-direction: column;
 }
 
 #header-section {
@@ -172,7 +172,7 @@ textarea {
     justify-content: space-between;
 }
 
-.resume-subcontent {
+.resume-subcontent-display {
     display: grid;
     gap: 12px;
 }

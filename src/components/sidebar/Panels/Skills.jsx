@@ -5,6 +5,10 @@ export default function Skills({ isToggled, onShow, skillsData, setSkillsData })
     const [inputValue, setInputValue] = useState('');
 
     function handleAddSkill() {
+        if (inputValue.length <= 0) {
+            return;
+
+        }
         setSkillsData([...skillsData, { id: crypto.randomUUID(), value: inputValue }]);
         setInputValue('');
     }
@@ -33,9 +37,9 @@ export default function Skills({ isToggled, onShow, skillsData, setSkillsData })
                         <button
                             className="add-btns"
                             id="add-skills-btn"
-                            onClick={handleAddSkill}
-                        >
-                            Add Skill</button>
+                            onClick={handleAddSkill}>
+                            Add Skill
+                        </button>
                     </div>
 
                     <SkillsList skills={skillsData} handleDelete={handleDeleteSkill} />

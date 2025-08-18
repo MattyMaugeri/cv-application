@@ -6,6 +6,10 @@ export default function Summary({ isToggled, onShow, summaryData, setSummaryData
         setSummaryData(e.target.value);
     }
 
+    function handleDeleteSummary() {
+        setSummaryData('');
+    }
+
     return (
         <div className="panels">
             <div className="panels-headers">
@@ -21,7 +25,7 @@ export default function Summary({ isToggled, onShow, summaryData, setSummaryData
                         placeholder="Enter your summary here"
                     />
                     
-                    <button id="delete-summary-btn" className="delete-btns">Delete Summary</button>
+                    <button id="delete-summary-btn" className="delete-btns" onClick={handleDeleteSummary}>Delete Summary</button>
                 </div>
             ) : ""}
         </div>

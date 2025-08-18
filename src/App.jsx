@@ -40,7 +40,6 @@ function App() {
 
   return (
     <>
-
       <Sidebar
         personalDetailsData={personalDetailsData} setPersonalDetailsData={setPersonalDetailsData}
         summaryData={summaryData} setSummaryData={setSummaryData}
@@ -56,7 +55,6 @@ function App() {
         experienceData={experienceData} experienceList={experienceList}
         educationData={educationData} educationList={educationList}
       />
-
     </>
   )
 }
